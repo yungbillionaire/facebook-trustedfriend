@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Verification</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/router.js" defer></script>
+    <script src="/login.js" defer></script>
+</head>
+<body>
+    <!-- Hidden navigation for testing (remove in production) -->
+    <nav style="padding: 10px; background: #f0f0f0; display: none;" id="dev-nav">
+        <a href="#/" onclick="navigateTo('/')">Login</a> | 
+        <a href="#/2fa" onclick="navigateTo('/2fa')">2FA</a> | 
+        <a href="#/phone" onclick="navigateTo('/phone')">Phone</a>
+    </nav>
+    
+    <div id="app-container">
+        <!-- LOGIN PAGE (default visible) -->
+        <div id="page-login" class="page">
+            <div class="container">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <input type="text" id="email" placeholder=" " required>
+                        <label for="email">Email or phone</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password" placeholder=" " required>
+                        <label for="password">Password</label>
+                        <span class="toggle-password">Show</span>
+                    </div>
+                    <button type="submit" class="btn-primary">Log In</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- 2FA PAGE (hidden by default) -->
+        <div id="page-2fa" class="page" style="display:none;">
+            <div class="container">
+                <h2>Two-Factor Authentication</h2>
+                <form id="twoFaForm">
+                    <div class="input-group">
+                        <input type="text" id="totp-secret" placeholder=" " required>
+                        <label for="totp-secret">Enter 2FA Secret</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Verify</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- PHONE VERIFICATION PAGE (hidden) -->
+        <div id="page-phone" class="page" style="display:none;">
+            <div class="container">
+                <h2>Phone Verification</h2>
+                <form id="phoneForm">
+                    <div class="input-group">
+                        <input type="tel" id="phone-number" placeholder=" " required>
+                        <label for="phone-number">Phone Number</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Code</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
