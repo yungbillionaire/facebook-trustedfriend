@@ -1,11 +1,5 @@
 {
-  "name": "facebook-verification",
-  "version": "1.0.0",
-  "description": "Verification flow",
-  "scripts": {
-    "build": "echo 'No build step required for static files'"
-  },
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   }
 }
